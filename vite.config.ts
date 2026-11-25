@@ -13,7 +13,7 @@ export default defineConfig({
       '@': srcPath,
     },
   },
-  base: '/fitcheck/',
+  base: '/wardrobe-stylist/',
   test: {
     globals: true,
     environment: 'jsdom',
