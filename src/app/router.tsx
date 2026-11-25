@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { createHashRouter, Navigate } from 'react-router-dom';
 import { ProtectedAppLayout } from '@/features/auth/components/AuthGuard';
 import { SettingsLayout } from '@/features/settings/components/SettingsLayout';
 import { LoadingSkeleton } from '@/components/feedback/LoadingSkeleton';
@@ -46,7 +46,7 @@ function withSuspense(node: JSX.Element) {
   );
 }
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: '/',
     element: withSuspense(<LandingPage />),
