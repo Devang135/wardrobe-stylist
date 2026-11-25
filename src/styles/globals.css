@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-canvas: #faf8f5;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f3efe9;
+  --color-ink: #1c1917;
+  --color-ink-muted: #57534e;
+  --color-ink-subtle: #78716c;
+  --color-border: #e6e0d6;
+  --color-border-strong: #d4cbbd;
+
+  --color-accent: #b55d42;
+  --color-accent-hover: #9d4d34;
+  --color-accent-soft: #f6e8e2;
+  --color-accent-foreground: #ffffff;
+
+  --color-sage: #5b705a;
+  --color-sage-soft: #ebf0ea;
+  --color-sage-foreground: #2f3e2e;
+
+  --color-danger: #b43c3c;
+  --color-danger-soft: #fbecec;
+
+  --color-warning: #a16207;
+  --color-warning-soft: #fef6e6;
+
+  --radius-xl: 0.875rem;
+  --radius-2xl: 1.25rem;
+
+  --shadow-card: 0 1px 2px rgba(28, 25, 23, 0.04), 0 4px 14px rgba(28, 25, 23, 0.03);
+  --shadow-elevated: 0 10px 30px rgba(28, 25, 23, 0.08), 0 2px 6px rgba(28, 25, 23, 0.04);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    @apply bg-canvas text-ink font-sans;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply tracking-tight text-ink;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-canvas;
+  }
+}
+
+/* Subtle editorial scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ink-subtle);
+}
